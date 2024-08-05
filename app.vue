@@ -1,6 +1,10 @@
 <template>
   <div>
-    <NuxtRouteAnnouncer />
-    <NuxtWelcome />
+    <el-button @click="ElMessage('hello')">button</el-button>
+    <ElButton :icon="ElIconEditPen" type="success">button</ElButton>
+    <LazyElButton type="warning">lazy button</LazyElButton>
+    <el-icon :size="20">
+      <ElIconEdit />
+    </el-icon>
   </div>
 </template>

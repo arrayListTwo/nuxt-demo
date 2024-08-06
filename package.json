@@ -11,12 +11,12 @@
   },
   "dependencies": {
     "@nuxtjs/i18n": "9.0.0-alpha.1",
-    "dayjs": "^1.11.12",
     "element-plus": "^2.7.8",
     "nuxt": "^3.12.4",
     "vue": "latest"
   },
   "devDependencies": {
-    "@element-plus/nuxt": "^1.0.9"
+    "@element-plus/nuxt": "^1.0.9",
+    "dayjs-nuxt": "^2.1.9"
   }
 }

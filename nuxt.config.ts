@@ -10,9 +10,13 @@ export default defineNuxtConfig({
   },
   modules: [
     '@element-plus/nuxt',
-    '@nuxtjs/i18n'
+    '@nuxtjs/i18n',
+    'dayjs-nuxt'
   ],
   i18n: {
     vueI18n: './i18n.config.ts'
   },
+  dayjs: {
+    plugins: ['relativeTime']
+  }
 })

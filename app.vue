@@ -11,13 +11,13 @@
       <el-option v-for="(item, key) in locales" :key="key" :value="key" :label="item"></el-option>
     </el-select>
     <div>{{ $dayjs(1691025478849).format('YYYY-MM-DD') }}</div>
-    <div>{{ $dayjs().format('YYYY-MM-DD HH:mm:ss') }}</div>
   </div>
 </template>
 
 <script setup lang="ts">
+
 const i18n = useI18n()
-const { locale } = i18n
+const {locale} = i18n
 
 const locales = ref({
   cn: '简体中文',
@@ -27,7 +27,7 @@ const locales = ref({
 
 // 获取本地存储的语言
 const language = useCookie<string>('language')
-if(language.value) {
+if (language.value) {
   locale.value = language.value
 }
 
@@ -36,8 +36,9 @@ const handleLanguage = (value: string) => {
   language.value = value
 }
 
-const nuxtApp = useNuxtApp()
+import { useDayjs } from '#dayjs' // not need if you are using auto import
+const dayjs = useDayjs()
 
-console.log(nuxtApp.$dayjs(1691025478849).format('YYYY-MM-DD HH:mm:ss'))
+console.log(dayjs(1691025478849).format('YYYY-MM-DD'))
 
 </script>

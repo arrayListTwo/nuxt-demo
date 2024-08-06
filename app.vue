@@ -10,6 +10,8 @@
     <el-select v-model="locale" @change="handleLanguage">
       <el-option v-for="(item, key) in locales" :key="key" :value="key" :label="item"></el-option>
     </el-select>
+    <div>{{ $dayjs(1691025478849).format('YYYY-MM-DD') }}</div>
+    <div>{{ $dayjs().format('YYYY-MM-DD HH:mm:ss') }}</div>
   </div>
 </template>
 
@@ -33,5 +35,9 @@ if(language.value) {
 const handleLanguage = (value: string) => {
   language.value = value
 }
+
+const nuxtApp = useNuxtApp()
+
+console.log(nuxtApp.$dayjs(1691025478849).format('YYYY-MM-DD HH:mm:ss'))
 
 </script>

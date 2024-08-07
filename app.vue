@@ -10,11 +10,13 @@
     <el-select v-model="locale" @change="handleLanguage">
       <el-option v-for="(item, key) in locales" :key="key" :value="key" :label="item"></el-option>
     </el-select>
-    <div>{{ $dayjs(1691025478849).format('YYYY-MM-DD') }}</div>
+    <div>Now: {{ time }}</div>
   </div>
 </template>
 
 <script setup lang="ts">
+
+const { $dayjs, $timeFromNow } = useNuxtApp();
 
 const i18n = useI18n()
 const {locale} = i18n
@@ -36,9 +38,7 @@ const handleLanguage = (value: string) => {
   language.value = value
 }
 
-import { useDayjs } from '#dayjs' // not need if you are using auto import
-const dayjs = useDayjs()
-
-console.log(dayjs(1691025478849).format('YYYY-MM-DD'))
+// const time = ref($dayjs().format('YYYY-MM-DD'))
+const time = ref($dayjs().to($dayjs('2024-01-01')))
 
 </script>
